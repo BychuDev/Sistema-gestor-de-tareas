@@ -1,5 +1,5 @@
 <?php
-$env = parse_ini_file(trim("../.htaccess/access.env"));  
+$env = parse_ini_file(trim("../access.env"));  
 return [
     'host' => $env['DB_HOST'] ?? 'localhost',
     'dbname' => $env['DB_NAME'] ?? '',
