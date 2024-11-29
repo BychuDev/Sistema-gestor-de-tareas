@@ -1,3 +1,7 @@
+<?php
+require_once '../modelo/gestor_sesion.php';
+session_doc();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,30 +25,42 @@
                         <h3>Panel de Registro</h3>
                     </div>
                     <div class="card-body">
-                        <form action="/registro" method="post">
+                        <form action="../controlador/registro_pagina.php" method="post">
+                        <?php
+if (isset($_GET['error'])) {
+    echo '<div style="color: white; text-align: center; margin-top: 20px;">';
+    switch ($_GET['error']) {
+        case '1':
+            echo "<a style='color: black'>Todos los campos son obligatorios.</a>";
+            break;
+        default:
+            echo "Error desconocido.";
+    }
+    echo '</div>';
+}
+?>
                             <div class="mb-3">
-                                <label for="nombre" class="form-label">Usuario</label>
-                                <input type="text" id="nombre" name="nombre" class="form-control" required>
+                                <label for="usuario" class="form-label">Usuario</label>
+                                <input type="text" id="usuario" name="usuario" class="form-control" required>
                             </div>
                             <div class="mb-3">
                                 <label for="nombre" class="form-label">Nombre</label>
-                                <input type="text" id="nombre" name="nombre" class="form-control" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="apellido" class="form-label">Apellido</label>
-                                <input type="text" id="apellido" name="apellido" class="form-control" required>
+                                <input type="text" id="nombre2" name="nombre2" class="form-control" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Correo Electrónico</label>
                                 <input type="email" id="email" name="email" class="form-control" required>
                             </div>
                             <div class="mb-3">
+    <label for="cargo" class="form-label">Tipo de usuario</label>
+    <select id="cargo" name="cargo" class="form-control" required>
+        <option value="Usuario">Usuario</option>
+        <option value="Administrador">Administrador</option>
+    </select>
+</div>
+                            <div class="mb-3">
                                 <label for="password" class="form-label">Contraseña</label>
                                 <input type="password" id="password" name="password" class="form-control" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="confirm_password" class="form-label">Confirmar Contraseña</label>
-                                <input type="password" id="confirm_password" name="confirm_password" class="form-control" required>
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Registrarse</button>
