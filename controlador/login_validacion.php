@@ -1,5 +1,5 @@
 <?php
-require 'connection.php';
+require '../modelo/db.php';
 session_start();
 $con = connection();
 if ($_SERVER["REQUEST_METHOD"] == "POST")
