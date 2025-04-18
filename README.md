@@ -2,7 +2,7 @@
 
 Proyecto Académico.
 
-Este proyecto consiste en un sistema web para la gestión de tareas, construido en PHP siguiendo el modelo de arquitectura MVC (Modelo - Vista - Controlador). Permite registrar, visualizar, editar y eliminar tareas, con una interfaz sencilla y funcional.
+Este proyecto consiste en un sistema para la gestión de tareas, construido en PHP siguiendo el modelo de arquitectura MVC (Modelo - Vista - Controlador). Permite registrar, visualizar, editar y eliminar tareas, con una interfaz sencilla y funcional.
 
 ---
 
